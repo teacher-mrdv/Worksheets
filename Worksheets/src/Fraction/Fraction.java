@@ -3,23 +3,25 @@ package Fraction;
 import java.util.Scanner;
 
 /*
- * Chapter 11 of the Java Worksheets
+ * Chapter 11 of the Java Worksheets, with improvements
  */
 public class Fraction
 {
 	private int num;
 	private int den;
 
-	// Constructor methods
+	// Constructor method(s)
+	/* empty constructor is not good to include as the instantiated fraction would be 0/0 !
 	public Fraction()
 	{
 	}
+	*/
 
 	public Fraction(int num, int den)
 	{
 		this.num = num;
 		this.den = den;
-		this.cancel();
+		this.simplify();
 	}
 
 	public int getNum()
@@ -78,13 +80,21 @@ public class Fraction
 		return gcd;
 	}
 	
-	public void cancel()
+	public void simplify()
 	{
 		int gcd = gcd(this.num, this.den);
 		this.num = this.num / gcd;
 		this.den = this.den / gcd;
 		
 	}
+	
+	public double toDouble()
+	{
+		return (double)this.num/this.den;
+	}
+	
+	// Homework: implement the add method!
+	//
 
 	// polymorphism
 	public String toString()
