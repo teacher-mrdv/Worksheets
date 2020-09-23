@@ -10,13 +10,14 @@ public class Fraction
 	private int num;
 	private int den;
 
-	// Constructor method(s)
-	/* empty constructor is not good to include as the instantiated fraction would be 0/0 !
+	/* empty constructor is not good to include
+	 * because an empty instantiated fraction would be 0/0 !
 	public Fraction()
 	{
 	}
 	*/
 
+	// Constructor method
 	public Fraction(int num, int den)
 	{
 		this.num = num;
@@ -93,6 +94,7 @@ public class Fraction
 		return (double)this.num/this.den;
 	}
 	
+	//
 	// Homework: implement the add method!
 	//
 
