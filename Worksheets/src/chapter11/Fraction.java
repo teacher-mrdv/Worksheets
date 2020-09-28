@@ -5,7 +5,7 @@ import java.util.Scanner;
 /*
  * Chapter 11 of the Java Worksheets, with improvements
  */
-public class Fraction
+public class Fraction implements Comparable<Fraction>
 {
 	private int num;
 	private int den;
@@ -51,19 +51,7 @@ public class Fraction
 		System.out.println(this.num + "/" + this.den);
 	}
 
-	// input a numerator and a denominator to make a fraction 
-	public static Fraction enter()
-	{
-		// note: no format check, though!!!
-		String strFraction = IBIO.input("Enter fraction (a/b format) ");
-		strFraction = strFraction.replace("/", " "); // Changes slash to space
-		Scanner parse = new Scanner(strFraction); // to parse the fraction
-		int a = parse.nextInt(); // so we can extract the numerator
-		int b = parse.nextInt(); // denominator
-		parse.close();
-		Fraction f = new Fraction(a, b);
-		return f;
-	}
+	// 
 
 	private static int gcd(int num1, int num2)
 	{
@@ -104,7 +92,14 @@ public class Fraction
 		return new Fraction(resultNum, resultDen);
 	}
 	
-
+	public int compareTo(Fraction b)
+	{
+		if( this.toDouble() == b.toDouble() )
+			return 0;
+		else
+			return (int)(this.toDouble() - b.toDouble());
+	}
+	
 	// polymorphism
 	public String toString()
 	{
