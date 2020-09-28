@@ -1,4 +1,4 @@
-package Fraction;
+package chapter11;
 
 import java.util.Scanner;
 
@@ -55,7 +55,7 @@ public class Fraction
 	public static Fraction enter()
 	{
 		// note: no format check, though!!!
-		String strFraction = IBIO.input("Enter fraction (a/b format)");
+		String strFraction = IBIO.input("Enter fraction (a/b format) ");
 		strFraction = strFraction.replace("/", " "); // Changes slash to space
 		Scanner parse = new Scanner(strFraction); // to parse the fraction
 		int a = parse.nextInt(); // so we can extract the numerator

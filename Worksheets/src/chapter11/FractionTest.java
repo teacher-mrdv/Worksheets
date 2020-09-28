@@ -1,4 +1,4 @@
-package Fraction;
+package chapter11;
 
 public class FractionTest
 {
