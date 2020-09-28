@@ -1,7 +1,5 @@
 package chapter11;
 
-import java.util.Scanner;
-
 /*
  * Chapter 11 of the Java Worksheets, with improvements
  */
@@ -94,10 +92,13 @@ public class Fraction implements Comparable<Fraction>
 	
 	public int compareTo(Fraction b)
 	{
-		if( this.toDouble() == b.toDouble() )
+		double comp = this.toDouble() - b.toDouble();
+		if( comp == 0)
 			return 0;
+		else if( comp < 0 )
+			return -1;
 		else
-			return (int)(this.toDouble() - b.toDouble());
+			return 1;
 	}
 	
 	// polymorphism
