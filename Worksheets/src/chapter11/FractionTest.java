@@ -14,7 +14,7 @@ public class FractionTest
 		Fraction g = Fraction.enter();
 		System.out.println(g);
 		System.out.println(g.toDouble());
-		
+		System.out.println(f.add(g));
 
 	}
 

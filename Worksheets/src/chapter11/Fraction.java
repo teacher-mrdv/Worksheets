@@ -96,7 +96,14 @@ public class Fraction
 	
 	//
 	// Homework: implement the add method!
-	//
+	
+	public Fraction add(Fraction b)
+	{
+		int resultNum = this.num * b.den + this .den * b.num;
+		int resultDen = this.den * b.den;
+		return new Fraction(resultNum, resultDen);
+	}
+	
 
 	// polymorphism
 	public String toString()
