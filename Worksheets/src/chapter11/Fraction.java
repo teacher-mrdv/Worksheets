@@ -2,7 +2,9 @@ package chapter11;
 
 /*
  * Chapter 11 of the Java Worksheets, with improvements
+ * 
  */
+
 public class Fraction implements Comparable<Fraction>
 {
 	private int num;
