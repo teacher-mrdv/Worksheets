@@ -8,16 +8,16 @@ public class Fraction implements Comparable<Fraction>
 	private int num;
 	private int den;
 
-	/* empty constructor is not good to include
-	 * because an empty instantiated fraction would be 0/0 !
 	public Fraction()
 	{
 	}
-	*/
-
+	
 	// Constructor method
-	public Fraction(int num, int den)
+	public Fraction(int num, int den) throws Exception 
 	{
+		if( den == 0 )
+			throw new Exception("Division by zero");
+		
 		this.num = num;
 		this.den = den;
 		this.simplify();
@@ -83,7 +83,7 @@ public class Fraction implements Comparable<Fraction>
 	//
 	// Homework: implement the add method!
 	
-	public Fraction add(Fraction b)
+	public Fraction add(Fraction b) throws Exception
 	{
 		int resultNum = this.num * b.den + this .den * b.num;
 		int resultDen = this.den * b.den;

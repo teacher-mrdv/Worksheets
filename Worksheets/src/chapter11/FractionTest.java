@@ -10,7 +10,7 @@ public class FractionTest
 	// We moved the enter (Fraction) method to this class, to keep...
 	// the Fraction class I/O-free
 	// input a numerator and a denominator to make a fraction
-	public static Fraction enterFraction()
+	public static Fraction enterFraction() throws Exception
 	{
 		// note: no format check, though!!!
 		String strFraction = IBIO.input("Enter fraction (a/b format) ");
@@ -32,13 +32,26 @@ public class FractionTest
 		System.out.println();
 	}
 
-	public static void main(String[] args)
+	public static void main(String[] args) throws Exception
 	{
 		Fraction f = new Fraction(2, 10);
 		f.print();
 		// Making the enter method static allows us to call it
 		// before/in order to create a Fraction object
-		Fraction g = enterFraction();
+		boolean error = false;
+		Fraction g = new Fraction();
+		do
+		{
+			try
+			{
+				g = enterFraction();
+			} catch( Exception e )
+			{
+				error = true;
+				System.out.println( e.getMessage() );
+			}
+		} while (error);
+		
 		System.out.println(g);
 		System.out.println(g.toDouble());
 		Fraction h = f.add(g);
